@@ -1,0 +1,26 @@
+package com.example.warpplugin;
+
+import org.bukkit.plugin.java.JavaPlugin;
+
+import com.example.warpplugin.SetWarpCommand;
+import com.example.warpplugin.WarpCommand;
+
+public class Main extends JavaPlugin {
+
+    @Override
+    public void onEnable() {
+        // Register the commands
+        getCommand("setwarp").setExecutor(new SetWarpCommand(this));
+        getCommand("warp").setExecutor(new WarpCommand(this));
+
+        // Load the configuration file
+        saveDefaultConfig();
+
+        getLogger().info("il plugin è stato abilitato");
+    }
+
+    @Override
+    public void onDisable() {
+        getLogger().info("il plugin è stato disabilitato");
+    }
+}
