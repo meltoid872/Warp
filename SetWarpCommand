@@ -42,8 +42,8 @@ public class SetWarpCommand implements CommandExecutor {
 
         plugin.saveConfig();
         player.sendMessage("Warp '" + warpName + "' has been set!");
-
-        // Add cooldown for the player after setting the warp
+        
+       
         PlayerMoveListener moveListener = new PlayerMoveListener(plugin);
         moveListener.addCooldown(player);
 
